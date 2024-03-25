@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primaryColor"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Olá, escolha a sua fruta!"
+        android:textColor="@color/blue"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="80dp"
+        android:layout_height="3dp"
+        android:background="@color/yellow"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:endIconCheckable="false"
+        app:endIconDrawable="@drawable/search_24"
+        app:endIconTint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_background"
+            android:drawableEnd="@drawable/search_24"
+            android:drawableTint="@color/Gray"
+            android:hint="Digite aqui" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/img_filter"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/image_background_orange"
+        app:contentPadding="10dp"
+        app:cornerFamily="rounded"
+        app:cornerSize="50%"
+        app:layout_constraintEnd_toStartOf="@id/img_filter1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        app:srcCompat="@drawable/frutas"
+        app:tint="@color/blue" />
+
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/img_filter1"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/image_background"
+        app:contentPadding="10dp"
+        app:cornerFamily="rounded"
+        app:cornerSize="50%"
+        app:layout_constraintBottom_toBottomOf="@+id/img_filter"
+        app:layout_constraintEnd_toStartOf="@id/img_filter2"
+        app:layout_constraintStart_toEndOf="@+id/img_filter"
+        app:layout_constraintTop_toTopOf="@+id/img_filter"
+        app:srcCompat="@drawable/maracuja"
+        app:tint="@color/blue" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/img_filter2"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/image_background"
+        app:contentPadding="10dp"
+        app:cornerFamily="rounded"
+        app:cornerSize="50%"
+        app:layout_constraintBottom_toBottomOf="@+id/img_filter1"
+        app:layout_constraintEnd_toStartOf="@id/img_filter3"
+        app:layout_constraintStart_toEndOf="@+id/img_filter1"
+        app:layout_constraintTop_toTopOf="@+id/img_filter1"
+        app:srcCompat="@drawable/abobora"
+        app:tint="@color/blue" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/img_filter3"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/image_background"
+        app:contentPadding="10dp"
+        app:cornerFamily="rounded"
+        app:cornerSize="50%"
+        app:layout_constraintBottom_toBottomOf="@+id/img_filter2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img_filter2"
+        app:layout_constraintTop_toTopOf="@+id/img_filter2"
+        app:srcCompat="@drawable/alface"
+        app:tint="@color/blue" />
+
+    <TextView
+        android:textSize="12sp"
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Todos"
+        android:textColor="@color/blue"
+        app:layout_constraintEnd_toEndOf="@+id/img_filter"
+        app:layout_constraintStart_toStartOf="@+id/img_filter"
+        app:layout_constraintTop_toBottomOf="@+id/img_filter" />
+
+    <TextView
+        android:textSize="12sp"
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Frutas"
+        android:textColor="@color/blue"
+        app:layout_constraintEnd_toEndOf="@+id/img_filter1"
+        app:layout_constraintStart_toStartOf="@+id/img_filter1"
+        app:layout_constraintTop_toBottomOf="@+id/img_filter1" />
+
+    <TextView
+        android:textSize="12sp"
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Legumes"
+        android:textColor="@color/blue"
+        app:layout_constraintEnd_toEndOf="@+id/img_filter2"
+        app:layout_constraintStart_toStartOf="@+id/img_filter2"
+        app:layout_constraintTop_toBottomOf="@+id/img_filter2" />
+
+    <TextView
+        android:textSize="12sp"
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Hortaliças"
+        android:textColor="@color/blue"
+        app:layout_constraintEnd_toEndOf="@+id/img_filter3"
+        app:layout_constraintStart_toStartOf="@+id/img_filter3"
+        app:layout_constraintTop_toBottomOf="@+id/img_filter3" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="Opções do seu hortifruti:"
+        android:textColor="@color/blue"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="@color/yellow"
+        app:layout_constraintEnd_toEndOf="@id/textView6"
+        app:layout_constraintStart_toStartOf="@id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvProducts"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        tools:listitem="@layout/main_row_item" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
