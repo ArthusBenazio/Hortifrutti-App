@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
         val apiService = retrofit.create(ApiService::class.java)
 
         // Fetch products using coroutines
-        CoroutineScope(Dispatchers.IO).launch {
+        CoroutineScope(Dispatchers.Main).launch {
             val response = apiService.getProducts()
 
             if (response.isSuccessful) {
