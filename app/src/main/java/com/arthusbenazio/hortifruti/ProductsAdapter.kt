@@ -6,14 +6,15 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.arthusbenazio.hortifruti.Model.ProductData
+import com.squareup.picasso.Picasso
 
-class ProductsAdapter (private val products: List<Products>) : RecyclerView.Adapter<ProductsAdapter.ProductViewHolder>() {
+class ProductsAdapter (private val products: List<ProductData>) : RecyclerView.Adapter<ProductsAdapter.ProductViewHolder>() {
 
     inner class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         val imageProduct: ImageView = itemView.findViewById(R.id.rvImageProduct)
         val nameTextView: TextView = itemView.findViewById(R.id.rvTextNome)
-        val iconSearch: ImageView = itemView.findViewById(R.id.rvImageSearch)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
@@ -23,9 +24,9 @@ class ProductsAdapter (private val products: List<Products>) : RecyclerView.Adap
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
         val currentProduct = products[position]
-        holder.imageProduct.setImageResource(currentProduct.imageStartID)
-        holder.nameTextView.text = currentProduct.productName
-        holder.iconSearch.setImageResource(currentProduct.imageEndID)
+        Picasso.get().load(currentProduct.productImage).into(holder.imageProduct)
+
+        holder.nameTextView.text = currentProduct.name
     }
 
     override fun getItemCount() = products.size
